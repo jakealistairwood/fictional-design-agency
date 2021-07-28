@@ -1,0 +1,452 @@
+@import './styles/main';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  width: 100%;
+  font-size: 16px;
+}
+
+a, button, li {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background-color: $deepNavy;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $white;
+  font-family: $primaryFont;
+}
+
+p {
+  color: $textColor;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.navbar {
+  height: 8vh;
+  width: 100%;
+
+  .container {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      .navbar--logo {
+        font-family: $primaryFont;
+        font-size: 1.2rem;
+      }
+    }
+
+    .navbar--menu {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      cursor: pointer;
+
+      .line-1 {
+        height: 1px;
+        width: 35px;
+        background-color: $white;
+        margin-bottom: 10px;
+      }
+
+      .line-2 {
+        height: 1px;
+        width: 20px;
+        background-color: $white;
+      }
+    }
+  }
+}
+
+.hero {
+  height: 70vh;
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .hero--content {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20vh;
+
+      .hero--content-title {
+        display: flex;
+        flex-direction: column;
+        font-size: 5rem;
+        letter-spacing: -0.08em;
+        line-height: 60px;
+      }
+
+      .hero--content-description {
+        width: 50%;
+        line-height: 30px;
+        margin-top: 15px;
+      }
+
+      .hero--social-links {
+        display: flex;
+        align-items: center;
+        margin-top: 60px;
+
+        .svg-container {
+          padding-right: 20px;
+        }
+      }
+
+      .hero--user-guide {
+        display: flex;
+        align-items: center;
+        margin-top: 100px;
+
+        h4 {
+          padding-right: 20px;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+.portfolio {
+  position: relative;
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    // position: absolute;
+    // top: -150px;
+    // left: 50%;
+    // transform: translateX(-50%);
+    padding-bottom: 10px;
+
+    .portfolio--right-col {
+      padding-top: 200px;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 100px;
+        height: 200px;
+        h3 {
+          font-size: 2rem;
+          border-bottom: 2px dotted $textColor;
+        }
+      }
+    }
+
+    .portfolio--left-col,
+    .portfolio--right-col {
+      display: flex;
+      flex-direction: column;
+      width: 48%;
+
+      .portfolio--project {
+        .portfolio--project-img {
+          width: 100%;
+          margin-bottom: 20px;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .portfolio--project-header {
+          display: flex;
+          flex-direction: column;
+          div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            h3 {
+              font-size: 2rem;
+              padding-right: 20px;
+            }
+          }
+
+          .project--subheader {
+            font-size: 1rem;
+            color: $textColor;
+            font-weight: 400;
+            margin-top: 5px;
+            margin-bottom: 70px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.services {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 200px;
+  padding-bottom: 200px;
+
+  .services--container {
+    width: 90%;
+    background-color: $secondaryBg;
+    padding: 100px;
+    position: relative;
+
+    .services--header {
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+    }
+
+    .services--service {
+      display: flex;
+      flex-direction: row;
+      margin-top: 50px;
+
+      .service {
+        display: flex;
+        flex-direction: column;
+        padding-right: 200px;
+
+        h4 {
+          font-size: 1.6rem;
+          margin-bottom: 20px;
+        }
+
+        ul {
+          li {
+            list-style-type: disc;
+            color: $textColor;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+
+    .triangle-design-detail {
+      position: absolute;
+      left: -40px;
+      bottom: -82px;
+    }
+
+    .circle-design-detail {
+      position: absolute;
+      right: 5%;
+      top: -15%;
+    }
+  }
+}
+
+.about {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 300px;
+  // padding-bottom: 200px;
+
+  .about--container {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    background-color: $secondaryBg;
+    padding: 100px;
+    position: relative;
+
+    .about--content {
+      display: flex;
+      flex-direction: column;
+      padding-left: 80px;
+
+      .about--content-header {
+        margin-bottom: 50px;
+        h2 {
+          font-size: 2rem;
+          margin-bottom: 20px;
+        }
+      }
+
+      .about--content-body {
+        display: flex;
+        flex-direction: column;
+
+        p {
+          font-size: 1.1rem;
+          color: $white;
+          font-weight: 300;
+          line-height: 40px;
+          width: 90%;
+          padding-bottom: 30px;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          margin-top: 20px;
+
+          h5 {
+            font-size: 1.2rem;
+            padding-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60vh;
+
+  .contact--callToAction {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    p {
+      // border-bottom: 2px solid $primaryBlue;
+      color: $white;
+      padding-bottom: 5px;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: '';
+        top: 100%;
+        right: 0;
+        left: 0;
+        width: 35%;
+        margin: 0 auto;
+        height: 2px;
+        background-color: $primaryBlue;
+      }
+    }
+
+    .contact--header {
+      font-size: 7rem;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+    .contact--subheader {
+      font-size: 1.2rem;
+      position: relative;
+      text-align: center;
+
+      // &::after {
+      //   position: absolute;
+      //   content: '';
+      //   top: 100%;
+      //   right: 0;
+      //   left: 0;
+      //   width: 20%;
+      //   margin: 0 auto;
+      //   height: 2px;
+      //   background-color: $white;
+      // }
+    }
+  }
+}
+
+.footer {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid #3C354A;
+    padding: 50px 0;
+
+    .footer--left {
+      display: flex;
+      flex-direction: column;
+
+      .company-address {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        color: $white;
+        margin-bottom: 30px;
+      }
+
+      .company-number {
+        font-size: 1rem;
+        color: $white;
+        border-bottom: 1px solid $primaryBlue;
+        padding-bottom: 3px;
+        margin-bottom: 7px;
+        width: max-content;
+      }
+
+      a {
+        .company-email {
+          font-size: 1rem;
+          color: $white;
+          border-bottom: 1px solid $primaryBlue;
+          padding-bottom: 3px;
+          margin-bottom: 7px;
+          width: max-content;
+        }
+      }
+    }
+
+    .footer--right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      .site-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .site-link {
+          color: $white;
+          text-transform: uppercase;
+          font-weight: 700;
+          font-size: 1rem;
+          margin: 0 30px;
+
+          &:nth-child(5) {
+            margin: 0;
+          }
+        }
+      }
+
+      .footer--logo {
+        color: $white;
+        font-weight: 700;
+        font-size: 1.5rem;
+        letter-spacing: -0.05em;
+        border-bottom: 1px solid $primaryBlue;
+      }
+    }
+  }
+}
