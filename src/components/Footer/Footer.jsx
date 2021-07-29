@@ -1,4 +1,33 @@
+const footerLinks = [
+    {
+        id: 1,
+        name: 'Work',
+        href: '/our-work'
+    },
+    {
+        id: 2,
+        name: 'Services',
+        href: '/services'
+    },
+    {
+        id: 3,
+        name: 'About',
+        href: '/about-us'
+    },
+    {
+        id: 4,
+        name: 'Careers',
+        href: '/careers'
+    },
+    {
+        id: 5,
+        name: 'Contact',
+        href: '/contact-us'
+    },
+]
+
 const Footer = () => {
+
     return (
         <footer className="footer">
             <div className="container">
@@ -14,11 +43,9 @@ const Footer = () => {
                 </div>
                 <div className="footer--right">
                     <ul className="site-links">
-                    <li className="site-link">Work</li>
-                    <li className="site-link">Services</li>
-                    <li className="site-link">Careers</li>
-                    <li className="site-link">About</li>
-                    <li className="site-link">Contact</li>
+                        {footerLinks.map(link => (
+                            <li className="site-link" key={link.id}><a href={link.href}>{link.name}</a></li>
+                        ))}
                     </ul>
                     <p className="footer--logo">19Toronto</p>
                 </div>
