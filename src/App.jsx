@@ -1,4 +1,6 @@
+import { useRef, useEffect } from 'react';
 import './App.scss';
+import Footer from './components/Footer';
 import DribbbleIcon from './assets/img/dribbble.svg';
 import InstagramIcon from './assets/img/instagram.svg';
 import BehanceIcon from './assets/img/behance.svg';
@@ -9,11 +11,48 @@ import TriangleIcon from './assets/img/triangle.svg';
 import CircleIcon from './assets/img/circle.svg';
 import OfficeImg from './assets/img/office.jpeg';
 import { projects } from './projects';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
 
-  console.log(projects.slice(0, 3));
-  console.log(projects.slice(3));
+  let leftProjects = useRef(null);
+  let rightProjects = useRef(null);
+  let callToAction = useRef(null);
+
+  useEffect(() => {
+    gsap.from(leftProjects, {
+      scrollTrigger: {
+        trigger: leftProjects,
+        // start: 'top top'
+      },
+      y: 100,
+      opacity: 0,
+      delay: 1,
+      duration: 1,
+      stagger: 0.2
+    });
+    gsap.from(rightProjects, {
+      scrollTrigger: {
+        trigger: rightProjects,
+        // start: 'top top'
+      },
+      y: 200,
+      opacity: 0,
+      delay: 1.2,
+      duration: 1.2,
+    });
+    gsap.from(callToAction, {
+      scrollTrigger: {
+        trigger: callToAction
+      },
+      opacity: 0,
+      duration: 2.5
+    })
+  }, [])
+
   return (
     <main className="app">
       {/* Navbar */}
@@ -22,10 +61,19 @@ const App = () => {
           <a href="#">
             <h5 className="navbar--logo">19Toronto</h5>
           </a>
-          <div className="navbar--menu">
+          <div className="navbar--hamburger-menu">
             <div className="line-1"></div>
             <div className="line-2"></div>
           </div>
+        </div>
+        <div className="navbar--menu">
+          <ul>
+            <li>Work</li>
+            <li>Services</li>
+            <li>About</li>
+            <li>Careers</li>
+            <li>Contact us</li>
+          </ul>
         </div>
       </nav>
       {/* Hero */}
@@ -58,9 +106,9 @@ const App = () => {
       {/* Portfolio */}
       <section className="portfolio">
         <div className="container">
-          <div className="portfolio--left-col">
+          <div className="portfolio--left-col" ref={el => (leftProjects = el)}>
             {projects.slice(0, 3).map(project => (
-              <div className="portfolio--project">
+              <div className="portfolio--project" key={project.title}>
                 <div className="portfolio--project-img">
                   <img src={project.img} alt={project.alt} />
                 </div>
@@ -77,9 +125,9 @@ const App = () => {
               </div>
             ))}
           </div>
-          <div className="portfolio--right-col">
+          <div className="portfolio--right-col" ref={el => (rightProjects = el)}>
             {projects.slice(3).map(project => (
-              <div className="portfolio--project">
+              <div className="portfolio--project" key={project.title}>
                 <div className="portfolio--project-img">
                   <img src={project.img} alt={project.alt} />
                 </div>
@@ -181,37 +229,14 @@ const App = () => {
       </section>
       {/* contact */}
       <section className="contact">
-        <div className="contact--callToAction">
+        <div className="contact--callToAction" ref={el => callToAction = el}>
           <p>Feel like we can help you?</p>
           <h3 className="contact--header">Let's Talk</h3>
           <h5 className="contact--subheader">Get in touch</h5>
         </div>
       </section>
       {/* footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer--left">
-              <p className="company-address">
-                <span>32 Park Lane,</span>
-                <span>Bristol, BS1 3FG.</span>
-              </p>
-              <p className="company-number">+44 (0) 1234 567 890</p>
-              <a href="#">
-                <p className="company-email">contact@oneninetoronto.agency</p>
-              </a>
-          </div>
-          <div className="footer--right">
-            <ul className="site-links">
-              <li className="site-link">Work</li>
-              <li className="site-link">Services</li>
-              <li className="site-link">Careers</li>
-              <li className="site-link">About</li>
-              <li className="site-link">Contact</li>
-            </ul>
-            <p className="footer--logo">19Toronto</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   )
 }
