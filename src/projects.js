@@ -6,7 +6,8 @@ export const projects = [
         features: 'Product Design, UX/UI Design, Development',
         img: '/assets/img/bluelemon.jpeg',
         alt: '',
-        credits: 'unsplash.com/@davisuko'
+        credits: 'unsplash.com/@davisuko',
+        href: '/our-work/blue-lemon-studios'
     },
     {
         title: 'Good Skin Club',
@@ -15,7 +16,8 @@ export const projects = [
         features: 'Strategy, Marketing, Product Design',
         img: '/assets/img/gsc.jpeg',
         alt: '',
-        credits: 'unsplash.com/@goodskinclub'
+        credits: 'unsplash.com/@goodskinclub',
+        href: '/our-work/good-skin-club'
     },
     {
         title: 'Magic Mind',
@@ -24,7 +26,8 @@ export const projects = [
         features: 'Strategy, Marketing, Product Design',
         img: '/assets/img/magicmind.jpeg',
         alt: '',
-        credits: 'unsplash.com/@magicmind'
+        credits: 'unsplash.com/@magicmind',
+        href: '/our-work/magic-mind'
     },
     {
         title: 'Mamiti Gin',
@@ -33,7 +36,8 @@ export const projects = [
         features: 'Strategy, Marketing, Product Design',
         img: '/assets/img/mamiti_gin.jpeg',
         alt: '',
-        credits: 'unsplash.com/@taylorgsimpson'
+        credits: 'unsplash.com/@taylorgsimpson',
+        href: '/our-work/mamiti-gin'
     },
     {
         title: 'Erbology',
@@ -42,6 +46,7 @@ export const projects = [
         features: 'Strategy, Marketing, Product Design',
         img: '/assets/img/erbology.jpeg',
         alt: '',
-        credits: 'unsplash.com/@sud_studio'
+        credits: 'unsplash.com/@sud_studio',
+        href: '/our-work/erbology'
     }
 ]

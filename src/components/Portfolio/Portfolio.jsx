@@ -39,7 +39,9 @@ const Portfolio = () => {
                     {projects.slice(0, 3).map(project => (
                     <div className="portfolio--project" key={project.title}>
                         <div className="portfolio--project-img">
-                            <img src={project.img} alt={project.alt} />
+                            <a href={project.href}>
+                                <img src={project.img} alt={project.alt} />
+                            </a>
                         </div>
                         <div className="portfolio--project-header">
                         <div>
@@ -58,7 +60,9 @@ const Portfolio = () => {
                     {projects.slice(3).map(project => (
                     <div className="portfolio--project" key={project.title}>
                         <div className="portfolio--project-img">
-                            <img src={project.img} alt={project.alt} />
+                            <a href={project.href}>
+                                <img src={project.img} alt={project.alt} />
+                            </a>
                         </div>
                         <div className="portfolio--project-header">
                             <div>
@@ -72,8 +76,9 @@ const Portfolio = () => {
                         </div>
                     </div>
                     ))}
+                    {/* Will be a button to load more projects on click */}
                     <a href="#">
-                    <h3>View More</h3>
+                        <h3>View More</h3>
                     </a>
                 </div>
             </div>

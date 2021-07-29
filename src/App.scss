@@ -181,12 +181,18 @@ p {
           cursor: pointer;
           overflow: hidden;
 
-          img {
-            width: 100%;
-            transition: 0.5s ease-in-out;
+          a {
+            height: inherit;
+            width: inherit;
+            margin: 0;
 
-            &:hover {
-              transform: scale(1.05);
+            img {
+              width: 100%;
+              transition: 0.5s ease-in-out;
+  
+              &:hover {
+                transform: scale(1.05);
+              }
             }
           }
         }

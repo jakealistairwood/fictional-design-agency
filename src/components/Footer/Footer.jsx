@@ -37,7 +37,7 @@ const Footer = () => {
                         <span>Bristol, BS1 3FG.</span>
                     </p>
                     <p className="company-number">+44 (0) 1234 567 890</p>
-                    <a href="#">
+                    <a href="mailto:contact@oneninetoronto.agency">
                         <p className="company-email">contact@oneninetoronto.agency</p>
                     </a>
                 </div>

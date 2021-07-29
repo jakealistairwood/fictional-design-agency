@@ -18,9 +18,11 @@ const Contact = () => {
     return (
         <section className="contact">
             <div className="contact--callToAction" ref={el => callToAction = el}>
-            <p>Feel like we can help you?</p>
-            <h3 className="contact--header">Let's Talk</h3>
-            <h5 className="contact--subheader">Get in touch</h5>
+                <p>Feel like we can help you?</p>
+                <h3 className="contact--header">Let's Talk</h3>
+                <a href="/contact-us">
+                    <h5 className="contact--subheader">Get in touch</h5>
+                </a>
             </div>
         </section>
     )

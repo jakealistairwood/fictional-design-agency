@@ -29,7 +29,7 @@ const About = () => {
                             nisi voluptatibus architecto iste sunt quam aliquid fuga atque fugiat eum non? Odio officia voluptas, saepe aspernatur earum itaque quibusdam corrupti, animi impedit consequuntur at accusantium. 
                             Quasi debitis dolorum magnam.
                         </p>
-                        <a href="#">
+                        <a href="/about-us">
                             <h5>Read more about us</h5>
                             <img src={ArrowRightIcon} alt="arrow-right-icon" />
                         </a>
