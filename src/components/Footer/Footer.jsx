@@ -47,7 +47,7 @@ const Footer = () => {
                             <li className="site-link" key={link.id}><a href={link.href}>{link.name}</a></li>
                         ))}
                     </ul>
-                    <p className="footer--logo">19Toronto</p>
+                    <p className="footer--logo">indigo.</p>
                 </div>
             </div>
         </footer>

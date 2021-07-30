@@ -48,14 +48,29 @@ p {
       and (-webkit-min-device-pixel-ratio: 2)
       and (min-resolution: 192dpi) { 
         width: 90%;
-} 
+  } 
+}
+
+.navbar.active {
+  background-color: white;
 }
 
 .navbar {
   height: 8vh;
   width: 100%;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
+
+  @media screen 
+      and (min-device-width: 1200px) 
+      and (max-device-width: 1600px) 
+      and (-webkit-min-device-pixel-ratio: 2)
+      and (min-resolution: 192dpi) { 
+        height: 10vh;
+  } 
 
   .container {
     display: flex;
@@ -65,8 +80,12 @@ p {
 
     a {
       .navbar--logo {
-        font-family: $primaryFont;
+        font-family: $logoFont;
         font-size: 1.2rem;
+      }
+
+      .navbar--logo.active {
+        color: #323232;
       }
     }
 
@@ -88,17 +107,72 @@ p {
         width: 20px;
         background-color: $white;
       }
+
+      .line-1.active,
+      .line-2.active {
+        background-color: #323232;
+      }
     }
   }
 
   .navbar--menu {
     display: none;
+    position: fixed;
+    height: 92vh;
+    top: 8vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    overflow: hidden;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      .menu-links {
+        .menu-links--header {
+          font-size: 1.6rem;
+          color: #d2cdcd;
+          font-weight: 300;
+          font-family: $primaryFont;
+          margin-bottom: 20px;
+          -moz-user-select: none;
+          -khtml-user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        ul {
+          li{
+            color: #323232;
+            font-size: 6rem;
+            font-weight: 700;
+            line-height: 100px;
+            font-family: $primaryFont;
+            letter-spacing: -0.07em;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
+        }
+    }
+    }
+  }
+
+  .active {
+    display: flex;
   }
 }
 
 .hero {
   height: 70vh;
-  
+  padding-top: 10vh;
+
   .container {
     display: flex;
     flex-direction: column;
@@ -157,13 +231,14 @@ p {
 
 .portfolio {
   position: relative;
-
+  padding-top: 100px;
   @media screen 
       and (min-device-width: 1200px) 
       and (max-device-width: 1600px) 
       and (-webkit-min-device-pixel-ratio: 2)
       and (min-resolution: 192dpi) { 
-        margin-top: 115px;
+        margin-top: 140px;
+        padding-top: 0;
   } 
   .container {
     display: flex;
@@ -178,7 +253,7 @@ p {
     .portfolio--right-col {
       padding-top: 200px;
 
-      a {
+      .project-btn {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -224,10 +299,14 @@ p {
         .portfolio--project-header {
           display: flex;
           flex-direction: column;
-          div {
+
+          .project--link {
             display: flex;
             flex-direction: row;
             align-items: center;
+            margin: 0;
+            padding: 0;
+            width: 100%;
 
             h3 {
               font-size: 2rem;
@@ -500,10 +579,11 @@ p {
 
       .footer--logo {
         color: $white;
+        font-family: $logoFont;
         font-weight: 700;
         font-size: 1.5rem;
         letter-spacing: -0.05em;
-        border-bottom: 1px solid $primaryBlue;
+        // border-bottom: 1px solid $primaryBlue;
       }
     }
   }

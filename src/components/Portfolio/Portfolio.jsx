@@ -16,7 +16,7 @@ const Portfolio = () => {
           },
           y: 100,
           opacity: 0,
-          delay: 1,
+          delay: 0.3,
           duration: 1,
         });
         gsap.from(rightProjects, {
@@ -26,7 +26,7 @@ const Portfolio = () => {
           },
           y: 200,
           opacity: 0,
-          delay: 1.2,
+          delay: 0.5,
           duration: 1.2,
         });
     }, []);
@@ -43,14 +43,14 @@ const Portfolio = () => {
                             </a>
                         </div>
                         <div className="portfolio--project-header">
-                        <div>
-                            <h3>{project.title}</h3>
-                            <img src={ArrowRightIcon} alt="arrow-right-btn" />
-                        </div>
-                        <h5 className="project--subheader"><span style={{
-                            color: `${project.categoryColor}`,
-                            fontWeight: '700'
-                        }}>{project.category}</span> | {project.features}</h5>
+                            <a className="project--link" href={project.href}>
+                                <h3>{project.title}</h3>
+                                <img src={ArrowRightIcon} alt="arrow-right-btn" />
+                            </a>
+                            <h5 className="project--subheader"><span style={{
+                                color: `${project.categoryColor}`,
+                                fontWeight: '700'
+                            }}>{project.category}</span> | {project.features}</h5>
                         </div>
                     </div>
                     ))}
@@ -64,10 +64,10 @@ const Portfolio = () => {
                             </a>
                         </div>
                         <div className="portfolio--project-header">
-                            <div>
+                            <a className="project--link" href={project.href}>
                                 <h3>{project.title}</h3>
                                 <img src={ArrowRightIcon} alt="arrow-right-btn" />
-                            </div>
+                            </a>
                             <h5 className="project--subheader"><span style={{
                                 color: `${project.categoryColor}`,
                                 fontWeight: '700'
@@ -76,7 +76,7 @@ const Portfolio = () => {
                     </div>
                     ))}
                     {/* Will be a button to load more projects on click */}
-                    <a href="#">
+                    <a className="project-btn" href="#">
                         <h3>View More</h3>
                     </a>
                 </div>
