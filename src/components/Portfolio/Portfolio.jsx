@@ -18,7 +18,6 @@ const Portfolio = () => {
           opacity: 0,
           delay: 1,
           duration: 1,
-          stagger: 0.2
         });
         gsap.from(rightProjects, {
           scrollTrigger: {

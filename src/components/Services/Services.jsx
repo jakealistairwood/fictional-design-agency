@@ -1,11 +1,26 @@
+import { useRef, useEffect } from 'react';
 import TriangleIcon from '../../assets/img/triangle.svg';
 import CircleIcon from '../../assets/img/circle.svg';
 import WaveIcon from '../../assets/img/wave.svg';
+import { gsap } from 'gsap';
 
 const Services = () => {
+
+    let services = useRef(null);
+    let details = useRef(null);
+
+    // useEffect(() => {
+    //     gsap.from(services, {
+    //         duration: 1,
+    //         delay: 3,
+    //         opacity: 0,
+    //         x: 600
+    //     });
+    // }, []);
+
     return (
         <section className="services">
-            <div className="services--container">
+            <div className="services--container" ref={el => services = el}>
                 <div className="services--header">
                     <h2>Our Services</h2>
                     <div className="svg-container">
@@ -39,10 +54,10 @@ const Services = () => {
                     </div>
                     </div>
                 </div>
-                <div className="triangle-design-detail">
+                <div className="triangle-design-detail" ref={el => details = el}>
                     <img src={TriangleIcon} alt="triangle-design-detail" />
                 </div>
-                <div className="circle-design-detail">
+                <div className="circle-design-detail" ref={el => details = el}>
                     <img src={CircleIcon} alt="circle-design-detail" />
                 </div>
             </div>

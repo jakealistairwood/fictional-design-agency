@@ -1,7 +1,9 @@
+import { useRef, useEffect } from 'react';
 import DribbbleIcon from '../../assets/img/dribbble.svg';
 import InstagramIcon from '../../assets/img/instagram.svg';
 import BehanceIcon from '../../assets/img/behance.svg';
 import ArrowDownIcon from '../../assets/img/arrow-down.svg';
+import { gsap } from 'gsap';
 
 const socialIcons = [
     {
@@ -25,23 +27,59 @@ const socialIcons = [
 ]
 
 const Hero = () => {
+
+    let pageHeader = useRef(null);
+    let pageSubheader = useRef(null);
+    let icons = useRef(null);
+    let userGuide = useRef(null);
+
+    useEffect(() => {
+        gsap.from(pageHeader, {
+            delay: 0.25,
+            duration: 1,
+            opacity: 0.05,
+            ease: 'back'
+        });
+        gsap.from(pageSubheader, {
+            delay: 0.25,
+            duration: 1,
+            opacity: 0.05,
+            ease: 'back',
+            x: -20
+        });
+        gsap.from(icons, {
+            delay: 0.25,
+            duration: 1,
+            opacity: 0.05,
+            ease: 'back',
+            y: 20
+        });
+        gsap.from(userGuide, {
+            delay: 0.25,
+            duration: 1,
+            opacity: 0.05,
+            ease: 'back',
+            x: -20
+        });
+    }, []);
+
     return (
         <section className="hero">
             <div className="container">
                 <div className="hero--content">
-                    <h1 className="hero--content-title">
+                    <h1 className="hero--content-title" ref={el => pageHeader = el}>
                         <span>Delivering digital</span>
                         <span>experiences that excel</span>
                     </h1>
-                    <p className="hero--content-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo excepturi libero ducimus. Modi, repellat. Rem voluptatibus repudiandae culpa vitae voluptas.</p>
-                    <div className="hero--social-links">
+                    <p className="hero--content-description" ref={el => pageSubheader = el}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo excepturi libero ducimus. Modi, repellat. Rem voluptatibus repudiandae culpa vitae voluptas.</p>
+                    <div className="hero--social-links" ref={el => icons = el}>
                         {socialIcons.map(icon => (
                             <a className="svg-container" key={icon.name} href={icon.href}>
                                 <img src={icon.src} alt={icon.alt} />
                             </a>
                         ))}
                     </div>
-                    <div className="hero--user-guide">
+                    <div className="hero--user-guide" ref={el => userGuide = el}>
                         <h4>Explore Our Work</h4>
                         <img src={ArrowDownIcon} alt="arrow-down-btn" />
                     </div>

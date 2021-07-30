@@ -41,6 +41,14 @@ p {
 .container {
   width: 80%;
   margin: 0 auto;
+
+  @media screen 
+      and (min-device-width: 1200px) 
+      and (max-device-width: 1600px) 
+      and (-webkit-min-device-pixel-ratio: 2)
+      and (min-resolution: 192dpi) { 
+        width: 90%;
+} 
 }
 
 .navbar {
@@ -94,7 +102,7 @@ p {
   .container {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100%;  
 
     .hero--content {
       display: flex;
@@ -130,6 +138,14 @@ p {
         align-items: center;
         margin-top: 100px;
 
+        @media screen 
+          and (min-device-width: 1200px) 
+          and (max-device-width: 1600px) 
+          and (-webkit-min-device-pixel-ratio: 2)
+          and (min-resolution: 192dpi) { 
+            margin-top: 60px;
+        } 
+
         h4 {
           padding-right: 20px;
           font-size: 1.2rem;
@@ -141,6 +157,14 @@ p {
 
 .portfolio {
   position: relative;
+
+  @media screen 
+      and (min-device-width: 1200px) 
+      and (max-device-width: 1600px) 
+      and (-webkit-min-device-pixel-ratio: 2)
+      and (min-resolution: 192dpi) { 
+        margin-top: 115px;
+  } 
   .container {
     display: flex;
     flex-direction: row;
