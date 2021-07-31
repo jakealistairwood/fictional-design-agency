@@ -1,4 +1,4 @@
-import ArrowRightIcon from '../../assets/img/arrow-right.svg';
+import { ArrowRightCircle } from 'react-feather';
 import WaveIcon from '../../assets/img/wave.svg';
 import OfficeImg from '../../assets/img/office.jpeg';
 
@@ -7,7 +7,7 @@ const About = () => {
         <section className="about">
             <div className="about--container">
                 <div className="about--img">
-                    <img src={OfficeImg} alt="picture-of-our-office" />
+                    <img src={OfficeImg} alt="indigo-office" />
                     <small>A picture of our beautiful office</small>
                 </div>
                 <div className="about--content">
@@ -31,7 +31,13 @@ const About = () => {
                         </p>
                         <a href="/about-us">
                             <h5>Read more about us</h5>
-                            <img src={ArrowRightIcon} alt="arrow-right-icon" />
+                            <ArrowRightCircle style={{
+                                color: '#fff',
+                                strokeWidth: '1.2px',
+                                height: '35px',
+                                width: '35px'
+                            }} 
+                            />
                         </a>
                     </div>
                 </div>

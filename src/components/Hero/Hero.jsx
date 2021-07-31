@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 import DribbbleIcon from '../../assets/img/dribbble.svg';
 import InstagramIcon from '../../assets/img/instagram.svg';
 import BehanceIcon from '../../assets/img/behance.svg';
-import ArrowDownIcon from '../../assets/img/arrow-down.svg';
+import { ArrowDownCircle } from 'react-feather';
 import { gsap } from 'gsap';
 
 const socialIcons = [
@@ -81,7 +81,12 @@ const Hero = () => {
                     </div>
                     <div className="hero--user-guide" ref={el => userGuide = el}>
                         <h4>Explore Our Work</h4>
-                        <img src={ArrowDownIcon} alt="arrow-down-btn" />
+                        <ArrowDownCircle style={{
+                            color: '#fff',
+                            strokeWidth: '1.5px',
+                            height: '25px',
+                            width: '25px'
+                        }} />
                     </div>
                 </div>
             </div>

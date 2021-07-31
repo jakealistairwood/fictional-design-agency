@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import { projects } from '../../projects';
-import ArrowRightIcon from '../../assets/img/arrow-right.svg';
+import { ArrowRightCircle } from 'react-feather';
 import { gsap } from 'gsap';
 
 const Portfolio = () => {
@@ -46,7 +46,12 @@ const Portfolio = () => {
                         <div className="portfolio--project-header">
                             <a className="project--link" href={project.href}>
                                 <h3>{project.title}</h3>
-                                <img src={ArrowRightIcon} alt="arrow-right-btn" />
+                                <ArrowRightCircle style={{
+                                    color: '#fff',
+                                    strokeWidth: '1.2px',
+                                    height: '35px',
+                                    width: '35px'
+                                }} />
                             </a>
                             <h5 className="project--subheader"><span style={{
                                 color: `${project.categoryColor}`,
@@ -67,7 +72,12 @@ const Portfolio = () => {
                         <div className="portfolio--project-header">
                             <a className="project--link" href={project.href}>
                                 <h3>{project.title}</h3>
-                                <img src={ArrowRightIcon} alt="arrow-right-btn" />
+                                <ArrowRightCircle style={{
+                                    color: '#fff',
+                                    strokeWidth: '1.2px',
+                                    height: '35px',
+                                    width: '35px'
+                                }} />
                             </a>
                             <h5 className="project--subheader"><span style={{
                                 color: `${project.categoryColor}`,
