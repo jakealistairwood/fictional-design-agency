@@ -14,17 +14,18 @@ const Portfolio = () => {
             trigger: leftProjects,
             // start: 'top top'
           },
-          y: 100,
+          y: 150,
           opacity: 0,
           delay: 0.3,
           duration: 1,
+          autoAlpha: 0
         });
         gsap.from(rightProjects, {
           scrollTrigger: {
             trigger: rightProjects,
             // start: 'top top'
           },
-          y: 200,
+          y: 150,
           opacity: 0,
           delay: 0.5,
           duration: 1.2,
@@ -35,7 +36,7 @@ const Portfolio = () => {
         <section className="portfolio">
             <div className="container">
                 <div className="portfolio--left-col" ref={el => (leftProjects = el)}>
-                    {projects.slice(0, 3).map(project => (
+                    {projects.slice(0, 3).map((project) => (
                     <div className="portfolio--project" key={project.title}>
                         <div className="portfolio--project-img">
                             <a href={project.href}>
@@ -76,7 +77,7 @@ const Portfolio = () => {
                     </div>
                     ))}
                     {/* Will be a button to load more projects on click */}
-                    <a className="project-btn" href="#">
+                    <a className="project-btn" href="/our-work">
                         <h3>View More</h3>
                     </a>
                 </div>
