@@ -42,7 +42,21 @@ const Menu = ({ open }) => {
                     </ul>
                 </div>
                 <div className="menu-footer">
-
+                    <div className="menu-footer-left">
+                        <p className="company-address">
+                            <span>32 Park Lane,</span>
+                            <span>Bristol, BS1 3FG.</span>
+                        </p>
+                        <p className="company-number">+44 (0) 1234 567 890</p>
+                        <a href="mailto:contact@oneninetoronto.agency">
+                            <p className="company-email">contact@oneninetoronto.agency</p>
+                        </a>
+                    </div>
+                    <div className="menu-footer-right">
+                        <a href="/">
+                            <p className="footer-logo">indigo.</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
