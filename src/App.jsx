@@ -19,6 +19,8 @@ const App = () => {
       <Navbar />
       {/* Hero */}
       <Hero />
+      <div class="bg-underlay"></div>
+      <div class="bg-overlay"></div>
       {/* Portfolio */}
       <Portfolio />
       {/* Services */}

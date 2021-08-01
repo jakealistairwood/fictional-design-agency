@@ -55,6 +55,35 @@ p {
   }
 }
 
+.bg-underlay {
+  background-image: url('./assets/img/hero-bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  inset: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 15;
+
+  // &::after {
+  //   position: absolute;
+  //   inset: 0;
+  //   height: 100vh;
+  //   width: 100%;
+  //   background-color: rgba(21, 16, 30, 0.46);
+  //   z-index: 16;
+  // }
+}
+
+.bg-overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  inset: 0;
+  background-color: rgba(21, 16, 30, 0.5);
+  z-index: 16;
+}
+
 .navbar.active {
   background-color: white;
 }
@@ -198,6 +227,8 @@ p {
 .hero {
   height: 70vh;
   padding-top: 10vh;
+  z-index: 20;
+  position: relative;
 
   @media screen and (max-device-width: 768px) {
     width: 100%;
@@ -277,6 +308,7 @@ p {
 .portfolio {
   position: relative;
   padding-top: 100px;
+  z-index: 20;
   @media screen 
       and (min-device-width: 1200px) 
       and (max-device-width: 1600px) 
@@ -462,13 +494,17 @@ p {
           }
           li {
             list-style-type: disc;
-            color: $textColor;
-            line-height: 30px;
+            color: $white;
+            line-height: 35px;
 
             @media screen and (max-device-width: 768px) {
               margin-left: 20px;
               margin-bottom: 10px;
               font-size: .8rem;
+            }
+
+            &::marker {
+              color: $primaryBlue;
             }
           }
         }
